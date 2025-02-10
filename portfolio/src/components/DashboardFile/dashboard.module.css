@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+#root {
+    margin: 100px auto;
+    max-width: 500px;
+    padding-bottom: 100px;
+  }
+  .hiddenCursor {
+    opacity: 0;
+  }
+  
+  .visibleCursor {
+    opacity: 1;
+    color: #FFFFFF; /* Customize cursor color */
+    font-size: 5rem; /* Match with text size */
+  }
+  
+  
+  .card {
+    font-size: 164px;
+    width: 300px;
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+      0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+      0 0 16px hsl(0deg 0% 0% / 0.075);
+    transform-origin: 10% 60%;
+  }
+  
+  .card-container {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: -120px;
+  }
+  
+  .splash {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    clip-path: path(
+      "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+    );
+  }
+  
+.customBtn {
+    cursor: pointer;
+    font-family: "system-ui";
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    transition: width 860ms ease-in-out, background 860ms ease-in-out;
+    width: 175px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    border-radius: 80px;
+    background: linear-gradient(59deg, rgb(0, 102, 204) 0%, rgb(197, 0, 204) 92%);
+    font-weight: 300;
+    border: none; /* Initial border state */
+    text-decoration: none; /* No underline by default */
+    position: relative; /* Position relative to use for the arrow */
+}
+
+.customBtn::after {
+    content: '';
+    position: absolute;
+    font-weight: bold;
+    right: 15px; /* Position the arrow inside the button */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgb(255, 255, 255); /* Arrow color */
+    opacity: 0; /* Hide arrow by default */
+    transition: opacity 860ms ease-in-out, right 860ms ease-in-out;
+}
+
+.customBtn:hover {
+    color: rgb(255, 255, 255); /* Already white, but included for clarity */
+    font-weight: bold;
+    width: 200px;
+    background: linear-gradient(59deg, rgb(0, 102, 204) 0%, rgb(197, 0, 204) 92%);
+    transition: width 860ms ease-in-out, background 860ms ease-in-out;
+    text-decoration: none;
+}
+
+.customBtn:hover::after {
+    opacity: 1; /* Show the arrow on hover */
+    font-weight: bold;
+    right: 20px; /* Adjust positioning if needed */
+}
+  
+
+.imgDataDashboard{
+    height: 34rem !important;
+    width: 100%;
+    margin: 10px;
+    margin-right: 50px;
+  }
