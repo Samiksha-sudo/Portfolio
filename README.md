@@ -34,6 +34,26 @@ The contact form posts to `POST /sendMail`. Create a `.env` in `backend/` with y
 
 The front end reads the API address from `portfolio/src/config/Url.js` (currently `http://localhost:9000`).
 
+## High-level design (HLD)
+
+```mermaid
+flowchart LR
+    V[Visitor] --> F[React app<br/>CRA + Material UI]
+    F -->|POST /sendMail| B[Express server]
+    B -->|Nodemailer, Gmail SMTP| O[Site owner inbox]
+```
+
+A static React front end shows the portfolio sections. The only dynamic feature is the contact form, which calls a small Express service that relays the message by email.
+
+## Low-level design (LLD)
+
+| Piece | Detail |
+| --- | --- |
+| `backend/Server.js` | Express app entry point |
+| `backend/routes/contactRoutes.js` | `POST /sendMail`: builds an HTML email from `name` and `email` in the request body and sends it with Nodemailer to the address in `EMAIL_USER` |
+| `portfolio/src/config/Url.js` | `MAIN_URL`, the back end base address (`http://localhost:9000`) |
+| Credentials | Read from environment variables via `dotenv`; never committed |
+
 ## Notes
 
 This is a learning project and is not actively maintained.
